@@ -15,6 +15,8 @@ import pandas as pd
 
 ## Data frames
 A data frame consist of a number of rows and column. Each column represents a feature of the data set, and so has a name and a data type. Each row represents a data point through associated feature values. The pandas library allows you to manipulate the data in a data frame in various ways. pandas has a lot of possibilities, so the following is merely scratching the surface to give a feel for the library.
+## Series
+Series is the basic data-type in pandas.A Series is very similar to a array (NumPy array) (in fact it is built on top of the NumPy array object).A Series can have axis labels, as it can be indexed by a label with no number indexing for the location of data.  It can hold any valid Python Object like List,Dictionary etc.
 
 ## Loading data from a csv file
 A `.csv` file is a *comma separated value* file. A very common way to store data. To load such data into a pandas data frame use the `read_csv` method:
@@ -29,6 +31,18 @@ To show the first few rows of a data frame, the `head` method is useful (once mo
 df.head()
 ```
 This will show the first 5 rows of the data frame.
+
+To show more than first 5 rows simply put the number of rows you want to print out inside the `head` method.
+```python
+df.head(10)
+```
+This will show the first 10 rows of the data frame.
+
+To show the last few rows of a data frame, the `tail` method is useful (once more this should sound familiar to R programmers):
+```python
+df.tail()
+```
+This will show the last 5 rows of the data frame.
 
 ## Subsetting: Getting a column by name
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
